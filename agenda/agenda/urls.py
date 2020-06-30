@@ -21,7 +21,14 @@ from django.views.generic import RedirectView
 urlpatterns = [
     path('admin/', admin.site.urls),
     # cria a rota para a view onde está a função q chama renderiza o html
-    path('agenda/', views.lista_eventos)
+    path('agenda/', views.lista_eventos),
     # redireciona para a outra rotaS
-    path('', RedirectView.as_view(url='/agenda/'))
+    path('', RedirectView.as_view(url='/agenda/')),
+    # redireciona p a pg de login
+    path('login/', views.login_user),
+    # qnd o usuário submeter o login
+    path('login/submit', views.submit_login),
+    path('logout/', views.logout_user),
+    path('agenda/evento/', views.evento),
+    path('agenda/evento/submit', views.submit_evento)
 ]

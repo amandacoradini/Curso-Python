@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Agenda</title>
+    </head>
+    <body style="margin-top: 170px">
+        <h1 align='center'>Login</h1>
+        <form action="submit" method="POST">{% csrf_token %}
+            <div align='center'>
+                <label>Usuário:</label>
+                <input type="text" name="username">
+                <p style ='margin-left: 10px'>
+                    <label>Senha:</label>
+                    <input type="password" name="password">
+                </p>
+                <p style="margin-left: 50px">
+                    <button type="submit">Entrar</button>
+                </p>
+            </div>
+        </form>
+        <!--Pega a msg lá do message e mostra aqui-->
+        <div align = 'center'>
+            {% for message in messages %} 
+                <strong style="margin-left: 30px">Erro! </strong>{{ message }}
+            {% endfor %}
+        </div>
+    </body>
+
+</html>
+<!--{% csrf_token %} cria um token de segurança no form q tem método POST, n precisa no get-->

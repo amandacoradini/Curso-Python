@@ -13,7 +13,8 @@ class Evento (models.Model):
     descricao = models.TextField(blank=True, null=True)
     # data do evento n pode ser nula ou branco
     # vai aparecer esse nome ao invés da variavel
-    data_evento = models.DateTimeField(verbose_name='Data do Evento')
+    data_evento = models.CharField(
+        max_length=100, verbose_name='Data do Evento')
     # smp q for add um registro no bd, ele vai ser preeenchido automaticamente
     # (com a hr atual)
     data_criacao = models.DateTimeField(auto_now=True)
@@ -36,6 +37,6 @@ class Evento (models.Model):
     def __str__(self):
         return self.titulo  # pega o título q eu criei acima e coloca como título do obj
 
-    def get_data_evento(self):
+     # def get_data_evento(self):
         # é possivel criar funções no model p chamar no html
-        return self.data_evento.strftime('%d/%m/%Y')
+        # return self.data_evento.strftime('%d/%m/%Y')
