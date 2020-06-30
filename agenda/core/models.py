@@ -35,3 +35,7 @@ class Evento (models.Model):
     # para conf o título do objeto q eu criarei no banco com o título q eu escolhi usamos esse métodoS
     def __str__(self):
         return self.titulo  # pega o título q eu criei acima e coloca como título do obj
+
+    def get_data_evento(self):
+        # é possivel criar funções no model p chamar no html
+        return self.data_evento.strftime('%d/%m/%Y')

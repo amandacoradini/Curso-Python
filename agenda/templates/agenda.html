@@ -1,0 +1,13 @@
+{% extends "model-page.html" %}
+
+{% block content %}
+    <h2>Agendamentos</h2>
+    <!--<b>{{ evento.titulo }} - {{ evento.data_evento }}</b>-->
+    <!--para precorrer a lista de eventos-->
+    <!--duas chaves imprime variáveis python, chave e porcentagem permite realizar operações python-->
+    <ul>
+        {% for evento in eventos %}
+            <li>{{ evento.titulo }} - {{ evento.get_data_evento }}</li><!--chama a função ao inves do valor direto-->
+        {% endfor %}
+    </ul>
+{% endblock %}
